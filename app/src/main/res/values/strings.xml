@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Quiz Game</string>
+    <string name="app_name">Guess the Word!</string>
 
 
     <string name="question_symbol">\u003F</string>
