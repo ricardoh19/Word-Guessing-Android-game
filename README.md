@@ -1,4 +1,4 @@
-**Word-Guessing-Android-game
+Word-Guessing-Android-game
 -------------------------------
 An Android "Word guessing game" application..
 
