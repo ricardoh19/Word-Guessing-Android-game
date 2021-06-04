@@ -128,24 +128,16 @@ class MainActivity : AppCompatActivity() {
         replayButton.setOnClickListener{
             this.score = 0
             scoreTextView.text = ""
-            Button1.isEnabled = true;
-            Button2.isEnabled = true;
-            Button3.isEnabled = true;
-            Button4.isEnabled = true;
-            Button5.isEnabled = true;
-            Button6.isEnabled = true;
-            Button7.isEnabled = true;
-            Button8.isEnabled = true;
-            Button9.isEnabled = true;
-            Button1.text = "?"
-            Button2.text = "?"
-            Button3.text = "?"
-            Button4.text = "?"
-            Button5.text = "?"
-            Button6.text = "?"
-            Button7.text = "?"
-            Button8.text = "?"
-            Button9.text = "?"
+
+
+            for ( i in 1..9){
+                var id:Int = resources.getIdentifier("button$i","id", packageName)
+                var btn:Button = findViewById(id) as Button
+                btn.isEnabled = true
+                btn.text = "?"
+            }
+
+
             replayButton.setVisibility(View.INVISIBLE)
             numbers = mutableListOf(0,1,2,3,4,5,6,7,8)
             questionNewIndex = numbers.shuffled().first()
@@ -158,15 +150,11 @@ class MainActivity : AppCompatActivity() {
         if (questionWord == newWord){
             this.score++;
 
-            Button1.isEnabled = false; // refactor by using loop statement to make code shorter
-            Button2.isEnabled = false; // also using loop statement, make text a "?"
-            Button3.isEnabled = false;
-            Button4.isEnabled = false;
-            Button5.isEnabled = false;
-            Button6.isEnabled = false;
-            Button7.isEnabled = false;
-            Button8.isEnabled = false;
-            Button9.isEnabled = false;
+            for ( i in 1..9){
+                var id:Int = resources.getIdentifier("button$i","id", packageName)
+                var btn:Button = findViewById(id) as Button
+                btn.isEnabled = false
+            }
 
             scoreTextView.text = "Number of trials needed: " + this.score.toString()
             replayButton.setVisibility(View.VISIBLE)
